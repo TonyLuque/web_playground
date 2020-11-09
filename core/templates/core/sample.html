@@ -1,0 +1,24 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+
+{% block title %}Sample{% endblock  %}
+
+
+{% block content %}
+<main>
+    <section class="main__container">
+      <div class="">
+        <div class="">
+          <img src="{% static 'core/img/sample.png' %}" class="img-fluid"/>
+        </div>
+        <div class="">
+          <h3>Página de prueba</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce hendrerit nibh vel faucibus auctor. 
+            Phasellus non arcu dictum, porttitor orci sed, maximus ligula. Duis mollis pulvinar tempor. 
+            Cras ex nisl, fringilla ut rhoncus a, vestibulum ac turpis.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+{% endblock  %}
