@@ -1,0 +1,10 @@
+{% if request.user.is_staff %}
+
+    <button type="button" data-toggle="colapse" data-target="#nep" aria-controls="nep" aria-expanded="false">
+        oa
+    </button>
+    <ul>
+        <li><a href="{% url 'pages:create' %}">Crear Página</a></li>
+        <li><a href="{% url 'pages:pages' %}">Listar Páginas</a></li>
+    </ul>
+{% endif %}
