@@ -1,8 +1,9 @@
 from django.urls import path
-from.views import PagesListView, PageDetailView, Pagecreate
+from.views import PagesListView, PageDetailView, PageCreate, PageUpdate
 
 pages_patterns = ([
     path('', PagesListView.as_view(), name='pages'),
     path('<int:pk>/<slug:page_slug>/', PageDetailView.as_view(), name='page'),
-    path('create/', Pagecreate.as_view(), name="create"),
+    path('create/', PageCreate.as_view(), name="create"),
+    path('update/<int:pk>/', PageUpdate.as_view(), name="update"),
 ], 'pages')

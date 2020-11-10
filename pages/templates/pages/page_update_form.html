@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Actualizar página{% endblock  %}
+
+{% block content %}
+{% include 'pages/includes/pages_menu.html' %}
+
+    {% if 'ok' in request.GET %}
+        <p>
+            Página editada correctamente.
+            <a href="{% url 'pages:page' page.id page.title|slugify %}">Haz click aqui para ver el resultado</a>
+        </p>
+    {% endif %}
+    <form action="" method="post">{% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <br>
+        <input type="submit" value="Actualizar página">
+    </form>
+{% endblock  %}
