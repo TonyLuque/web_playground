@@ -1,3 +1,8 @@
+{% load static %}
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+<link rel="stylesheet" href="{% static 'pages/css/custom_ckeditor.css' %}">
+
 {% if request.user.is_staff %}
 
     <button type="button" data-toggle="colapse" data-target="#nep" aria-controls="nep" aria-expanded="false">
