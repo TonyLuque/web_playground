@@ -18,7 +18,8 @@
             {% if not request.user.is_authenticated %}
             <li><a href="{% url 'login' %}">Acceder</a></li>
             {% else %}
-            <li><a href="{% url 'logout' %}">salir</a></li>
+            <li>{{ request.user }}</li>
+            <li><a href="{% url 'logout' %}">Salir</a></li>
             {% endif %}
         </ul>
     </nav>

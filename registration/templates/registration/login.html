@@ -5,6 +5,10 @@
 
 
 {% block content %}
+
+    {% if 'register' in request.GET %}
+        <p style="color: greenyellow;">Usuario registrado correctamente. Ya puedes identificarte</p>
+    {% endif %}
     <form action="" method="post">{% csrf_token %}
         <h3>Iniciar sesión</h3>
         {% if form.non_field_errors %}
