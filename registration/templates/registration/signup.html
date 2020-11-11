@@ -5,6 +5,7 @@
 
 
 {% block content %}
+<style>.errorlist{color: red;} label{display: none;}</style>
     <form action="" method="post">{% csrf_token %}
         <h3>Registro</h3>
         {{ form.as_p }}
