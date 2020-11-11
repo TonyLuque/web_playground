@@ -14,6 +14,13 @@
             <li><a href="{% url 'home' %}">Inicio</a></li>
             <li><a href="{% url 'pages:pages' %}">Páginas</a></li>
         </ul>
+        <ul>
+            {% if not request.user.is_authenticated %}
+            <li><a href="{% url 'login' %}">Acceder</a></li>
+            {% else %}
+            <li><a href="{% url 'logout' %}">salir</a></li>
+            {% endif %}
+        </ul>
     </nav>
     
     {% block content %}
