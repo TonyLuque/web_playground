@@ -1,0 +1,27 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Perfil{% endblock  %}
+
+{% block content %}
+{% include 'pages/includes/pages_menu.html' %}
+
+    <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+        <div>
+            {% if request.user.profile.avatar %}
+                <img src="{{ request.user.profile.avatar.url }}" style="width: 100px;" alt="avatar">
+                <p>¿Borrar?<input type="checkbox" name="avatar-clear" id="avatar-clear"></p>
+            {% else %}
+                <img src="{% static 'registration/img/no-avatar.jpg' %}" alt="avatar">
+            {% endif %}
+        </div>
+        <div>
+            <h3>Perfil</h3>
+            <input type="file" name="avatar" id="id_avatar">
+            <!-- {{ form.as_p }} muestra todos los campos incliyebdo el enlace de la imagen y el checkbox por defecto de borrar-->
+            <p>{{ form.bio }}</p>
+            <p>{{ form.link }}</p>
+            <input type="submit" value="Actualizar">
+        </div>
+    </form>
+{% endblock  %}
