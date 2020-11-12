@@ -21,6 +21,8 @@
             <!-- {{ form.as_p }} muestra todos los campos incliyebdo el enlace de la imagen y el checkbox por defecto de borrar-->
             <p>{{ form.bio }}</p>
             <p>{{ form.link }}</p>
+            <input type="email" value="{{request.user.email}}" readonly>
+            <p>Si deseas editar el email haz click <a href="{% url 'profile_email' %}">aquí</a>.</p>
             <input type="submit" value="Actualizar">
         </div>
     </form>
