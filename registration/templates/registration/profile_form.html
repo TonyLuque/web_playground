@@ -22,7 +22,8 @@
             <p>{{ form.bio }}</p>
             <p>{{ form.link }}</p>
             <input type="email" value="{{request.user.email}}" readonly>
-            <p>Si deseas editar el email haz click <a href="{% url 'profile_email' %}">aquí</a>.</p>
+            <p>Sí deseas editar el email haz click <a href="{% url 'profile_email' %}">aquí</a>.</p><br>
+            <p>Y sí desear cambiar la contraseña haz click <a href="{% url 'password_change' %}">aquí</a>.</p>
             <input type="submit" value="Actualizar">
         </div>
     </form>
