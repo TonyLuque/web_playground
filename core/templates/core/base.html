@@ -13,6 +13,7 @@
         <ul>
             <li><a href="{% url 'home' %}">Inicio</a></li>
             <li><a href="{% url 'pages:pages' %}">Páginas</a></li>
+            <li><a href="{% url 'profiles:list' %}">Perfiles</a></li>
         </ul>
         <ul>
             {% if not request.user.is_authenticated %}
