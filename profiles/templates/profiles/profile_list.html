@@ -12,4 +12,34 @@
         <p><b>{{ profile.user|truncatechars:"16" }}</b></p>
         <p><a href="{% url 'profiles:detail' profile.user %}">Ver perfil</a></p>
     {% endfor %}
+    <!-- Menú de paginación -->
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+    <ul>
+        {% if page_obj.has_previous %}
+        <li>
+            <a href="?page={{ page_obj.previous_page_number }}">&laquo;</a>
+        </li>
+        {% else %}
+        <li>
+            <a href="#" tabindex="-1">&laquo;</a>
+        </li>
+        {% endif %}
+        {% for i in paginator.page_range %}
+        <li class="{% if page_obj.number == i %}active{% endif %}">
+            <a href="?page={{ i }}">{{ i }}</a>
+        </li>
+        {% endfor %}
+        {% if page_obj.has_next %}
+        <li>
+            <a href="?page={{ page_obj.next_page_number }}">&raquo;</a>
+        </li>
+        {% else %}
+        <li  class="disabled">
+            <a href="#" tabindex="-1">&raquo;</a>
+        </li>
+        {% endif %}
+    </ul>
+    </nav>
+    {% endif %}
 {% endblock  %}
