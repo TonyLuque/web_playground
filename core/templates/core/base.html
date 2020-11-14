@@ -20,6 +20,7 @@
             <li><a href="{% url 'login' %}">Acceder</a></li>
             <li><a href="{% url 'signup' %}">Registro</a></li>
             {% else %}
+            <li><a href="{% url 'messenger:list' %}">Mensajes</a></li>
             <li><a href="{% url 'profile' %}">{{ request.user }}</a></li>
             <li><a href="{% url 'logout' %}">Salir</a></li>
             {% endif %}
