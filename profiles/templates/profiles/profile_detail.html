@@ -8,6 +8,9 @@
     {% else %}
         <img src="{% static 'registration/img/no-avatar.jpg' %}" alt="avatar">
     {% endif %}
+    {% if request.user != profile.user %}
+        <a href="{% url 'messenger:start' profile.user.username %}">Enviar mensaje</a>
+    {% endif %}
     <h3>{{ profile.user }}</h3>
     {% if profile.bio %}<p>{{ profile.bio }}</p>{% endif %}
     {% if profile.link %}<p><a href="{{ profile.link }}" target="_blank">{{ profile.link }}</a></p>{% endif %}
