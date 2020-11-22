@@ -14,16 +14,6 @@ from django.utils.decorators import method_decorator
 # Create your views here.
 
 @method_decorator(login_required, name="dispatch")
-"""
-class ThreadList(ListView):
-    # Es otra forma de recuperar los mensajes
-    model = Thread
-
-    def get_queryset(self):
-        queryset = super(ThreadList, self).get_queryset()
-        return queryset.filter(users=self.request.user)
-
-"""
 class ThreadList(TemplateView):
     template_name = "messenger/thread_list.html"
 
